@@ -8,10 +8,8 @@
 
 /**
  * @file queue.c
- * @brief File di implementazione dell'interfaccia per la coda
+ * File di implementazione dell'interfaccia per la coda
  */
-
-
 
 /* ------------------- funzioni di utilita' -------------------- */
 
@@ -115,13 +113,7 @@ void *pop(Queue_t *q) {
 
 }
 
-
-// NOTA: in questa funzione si puo' accedere a q->qlen NON in mutua esclusione
-//       ovviamente il rischio e' quello di leggere un valore non aggiornato, ma nel
-//       caso di piu' produttori e consumatori la lunghezza della coda per un thread
-//       e' comunque un valore "non affidabile" se non all'interno di una transazione
-//       in cui le varie operazioni sono tutte eseguite in mutua esclusione.
-
+//No mutua esclusione
 unsigned long length(Queue_t *q) {
     LockQueue(q);
     unsigned long len = q->qlen;
