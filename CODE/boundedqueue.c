@@ -8,7 +8,7 @@
 
 /**
  * @file boundedqueue.c
- * @brief File di implementazione dell'interfaccia per la coda di dimensione finita
+ * File di implementazione dell'interfaccia per la coda di dimensione finita
  */
 
 
